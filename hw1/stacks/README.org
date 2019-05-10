@@ -1,0 +1,15 @@
+* Part 3: Stacks
+
+* Implement the Stack class from scratch
+** Implement the functions:
+- push()
+  - Pushes an integer on top of the stack.
+
+- pop()
+  - Removes what is on the top of the stack, and returns that value to the caller.
+
+- top()
+  - Looks at the top value, and returns it. Does not manipulate the stack.
+
+- isEmpty()
+  - Returns a True or False if the stack is Empty or not, respectively.
