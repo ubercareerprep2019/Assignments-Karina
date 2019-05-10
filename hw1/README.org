@@ -1,0 +1,8 @@
+* Part 2: Arrays & Strings (1 hr)
+
+* Instructions
+Implement the function:
+Boolean isStringPermutation(String s1, String s2)
+
+This function takes two strings and returns true if one string is a permutation of
+the other, false otherwise.
