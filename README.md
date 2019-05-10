@@ -1,1 +1,2 @@
-# Assignments-Karina
+# Career Uber Prep Program Assignments
+## Karina Ionkina
