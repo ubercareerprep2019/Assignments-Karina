@@ -1,5 +1,13 @@
 * Part 3: Stacks & Queues
 
+* Usage 
+
+#+begin_src bash
+make main
+
+./main
+#+end_src
+
 * Instructions
 ** Implement the stack class from scratch. It contains the following methods:
 - push ()
@@ -12,10 +20,3 @@
 
 ** Implement queues using the stack you made
 
-* Usage 
-
-#+begin_src bash
-make main
-
-./main
-#+end_src
