@@ -14,8 +14,8 @@
 
 * Usage 
 
-```bash
+#+begin_src bash
 make main
 
 ./main
-```
+#+end_src
