@@ -11,12 +11,18 @@ bool stack::isEmpty(){
 }
 
 void stack::push(int n){
-  if (size < capacity){
-    arr[size-1] = n;
+
+  if (isEmpty()){
+    arr[0] = n;
     t = n;
     size += 1;
-    std::cout << "just pushed " << n << std::endl;
-    std::cout << "size is: " << size << std::endl;
+    return;
+  }
+  
+  if (size < capacity){
+    arr[size] = n;
+    t = n;
+    size += 1;
     return;
   }
 
@@ -35,18 +41,21 @@ int stack::top(){
 
 
 int stack::pop(){
-
+  
   if (!isEmpty()){
     int ret = t;
-      size--;
-      if (size == 0){
+      if (size == 1){
 	t = -1;
+	size -= 1;
+	return ret;
       }
+
       else {
-	t = arr[size-1];
+	t = arr[size-2];
+	size -=1;
+	return ret;
       }
-      return ret;
-    }
+  }
 
   else {
     std::cout << "Empty" << std::endl;
@@ -56,4 +65,13 @@ int stack::pop(){
 
 }
 
+void stack::debug_string(){
+  std::cout << "size: " << size << std::endl;
+  std::string s = "[ ";
+  for (int i=0; i < size; i++){
+    s += std::to_string(arr[i]) + ", ";
+  }
+
+  std::cout << s.substr(0, s.length() -2) << " ]" << std::endl;
+}
 
