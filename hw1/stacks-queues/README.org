@@ -14,9 +14,7 @@ make main
 - pop ()
 - top () 
 - isEmpty()
-
-** Add min() which returns the minumum element of the stack in O(1) time
-** Bonus: improve min() to have an O(1) time and O(1) space optimized.
-
-** Implement queues using the stack you made
+- min() returns the minumum element of the stack in O(1) time 
+  - Bonus: improve min() to have an O(1) time and O(1) space optimized.
+  - Implement queues using the stack you made
 
