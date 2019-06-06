@@ -1,15 +1,21 @@
-* Part 3: Stacks
+* Part 3: Stacks & Queues
 
-* Implement the Stack class from scratch
-** Implement the functions:
-- push()
-  - Pushes an integer on top of the stack.
-
-- pop()
-  - Removes what is on the top of the stack, and returns that value to the caller.
-
-- top()
-  - Looks at the top value, and returns it. Does not manipulate the stack.
-
+* Instructions
+** Implement the stack class from scratch. It contains the following methods:
+- push ()
+- pop ()
+- top () 
 - isEmpty()
-  - Returns a True or False if the stack is Empty or not, respectively.
+
+** Add min() which returns the minumum element of the stack in O(1) time
+** Bonus: improve min() to have an O(1) time and O(1) space optimized.
+
+** Implement queues using the stack you made
+
+* Usage 
+
+```bash
+make main
+
+./main
+```
