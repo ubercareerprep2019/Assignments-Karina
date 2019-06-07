@@ -1,0 +1,27 @@
+* Part 4: Linked Lists
+
+* Usage 
+
+#+begin_src bash
+make main
+
+./main
+#+end_src
+
+* Instructions
+** Implement a singly linked list class containing the following methods:
+- void pushBack(<T> data)
+- <T> popBack()
+- void insert(uint index)
+- void erase(uint index)
+- <T> elementAt(uint index)
+- uint size()
+
+** Implement the following tests
+- testPushBackAddsOneNode
+- testPopBackRemovesCorrectNode
+- testEraseRemovesCorrectNode
+- testDoesNothingIfNoNode
+- testElementAtReturnNode
+- testElementAtReturnsNoNodeIfIndexDNE
+- testSizeReturnsCorrectSize
