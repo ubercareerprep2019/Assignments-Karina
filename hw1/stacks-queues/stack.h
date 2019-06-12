@@ -1,10 +1,10 @@
 #pragma once
-#define capacity 10
+#define cap 10
 
 class stack {
 
  private:
-  int arr[capacity];
+  int arr[cap];
   int size;
   int t; //tracking top
   int min0;

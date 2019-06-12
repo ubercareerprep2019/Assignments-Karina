@@ -19,7 +19,7 @@ void stack::push(int n){
     return;
   }
   
-  if (size < capacity){
+  if (size < cap){
     arr[size] = n;
     t = n;
     size += 1;
