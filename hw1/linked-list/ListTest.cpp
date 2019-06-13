@@ -3,7 +3,7 @@
 
 int main()
 {
-    List *l = new List();
+  List< int > *l = new List< int >();
     std::cout << l->getDebugString();
     l->pushBack(1);
     l->pushBack(3);

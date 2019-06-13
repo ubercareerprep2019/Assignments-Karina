@@ -1,6 +1,8 @@
 #include <iostream>
 #include "stack.h"
 
+
+//index 0 stores the int while index 1 stores info about the next min
 stack::stack(){
   size = 0;
   t = -1;
@@ -9,6 +11,7 @@ stack::stack(){
 bool stack::isEmpty(){
   return size==0;
 }
+
 
 void stack::push(int n){
 
