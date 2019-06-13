@@ -4,8 +4,7 @@
 
 int main() {
 
-std::cout<< "--------------------------------STACK TESTS---------------------------"<<std::endl;
-
+  std::cout<< "--------------------------------STACK TESTS---------------------------"<<std::endl;
 stack s = stack();
 std::cout << s.isEmpty() << std::endl;
 s.push(5);
@@ -18,7 +17,7 @@ s.push(35);
 s.push(40);
 s.push(45);
 s.push(50);
- std::cout << s.debug_string() << std::endl;
+ std::cout << s.debugString() << std::endl;
 
 //at capacity
 s.push(55);
@@ -31,9 +30,33 @@ std::cout << s.pop() << std::endl;
 std::cout << s.pop() << std::endl;
 std::cout << s.pop() << std::endl;
 std::cout << s.pop() << std::endl;
-s.debug_string();
- std::cout << "top: " << s.top() << std::endl;
-std::cout<<"-----------------------------QUEUE TESTS---------------------------"<<std::endl;
+ std::cout<< s.debugString() << std::endl;
+std::cout << "top: " << s.top() << std::endl;
+
+std::cout<<"-----------------------------MIN STACK TEST---------------------------"<<std::endl;
+
+ minStack s2 = minStack();
+ s2.push(3);
+ s2.push(8);
+ s2.push(12);
+ s2.push(5);
+ std::cout << s2.debugString() << std::endl;
+ std::cout << "curr min: " << s2.minVal() << std::endl;
+ s2.push(12);
+ s2.push(22);
+ s2.push(11);
+ s2.push(2);
+ std::cout << s2.debugString() << std::endl;
+ std::cout << "curr min: " << s2.minVal() << std::endl;
+ s2.pop();
+ s2.pop();
+ std::cout << s2.debugString() << std::endl;
+ std::cout << "curr min: " << s2.minVal() << std::endl;
+
+
+
+
+ std::cout<<"\n" << "-----------------------------QUEUE TESTS---------------------------"<<std::endl;
 
 queue q1 = queue();
 q1.enqueue(1);

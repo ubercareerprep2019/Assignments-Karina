@@ -2,21 +2,25 @@
 #include "stack.h"
 #include <exception>
 
-
-
 //index 0 stores the int while index 1 stores info about the next min
 stack::stack(){
   size = 0;
   t = -1;
 }
 
+minStack::minStack(){
+}
+
 bool stack::isEmpty(){
   return size==0;
 }
 
+bool minStack::isEmpty(){
+  return m.isEmpty();
+}
 
 void stack::push(int n){
-
+  
   if (isEmpty()){
     arr[0] = n;
     t = n;
@@ -37,11 +41,31 @@ void stack::push(int n){
   }
 }
 
-int stack::top(){
-  return t;
+
+void minStack::push(int n){
+
+  //first element is min element
+  if (s.isEmpty()){
+    s.push(n);
+    m.push(n);
+  }
   
+  else {
+    s.push(n);
+    if (n < m.top()){
+      m.push(n);
+    }
+  }
 }
 
+
+int stack::top(){
+  return t;
+}
+
+int minStack::top(){
+  return s.top();
+}
 
 int stack::pop(){
   if (!isEmpty()){
@@ -63,11 +87,30 @@ int stack::pop(){
     std::cout << "Empty" << std::endl;
     return -1;
   }
-
-
 }
 
-std::string stack::debug_string(){
+int minStack::pop(){
+  if (!(s.isEmpty())){
+      if (m.top() == s.top()){
+	m.pop();
+      }
+    }
+  int ret = s.top();
+  s.pop();
+  return ret;
+}
+
+int minStack::minVal(){
+  if (!(s.isEmpty())){
+    return m.top();
+  }
+
+  else {
+    throw "empty!";
+      }
+}
+
+std::string stack::debugString(){
   std::cout << "size: " << size << std::endl;
   std::string s;
   for (int i=0; i < size; i++){
@@ -78,3 +121,6 @@ std::string stack::debug_string(){
   return s;
 }
 
+std::string minStack::debugString(){
+  return s.debugString();
+}

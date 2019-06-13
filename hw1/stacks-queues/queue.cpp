@@ -41,17 +41,18 @@ void queue::enqueue(int num){
 
 int queue::dequeue(){
 
-  if (size == 0){
-    return -1;
-  }
-
-  else {
+  if (size > 0){
     int ret = s1.pop();
     size -=1; 
     return ret;
   }
+
+  else { 
+    std::cout << "nothing to dequeue! " << std::endl; 
+    return -1;
+  }
 }
 
-std::string queue::debug_string(){
-  return s1.debug_string();
+std::string queue::debugString(){
+  return s1.debugString();
 }

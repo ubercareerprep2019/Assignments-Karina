@@ -7,8 +7,7 @@ class stack {
   int arr[cap];
   int size;
   int t; //tracking top
-  int min0;
-  int min1;
+
  public:
   //default size is 10
   stack();
@@ -16,5 +15,24 @@ class stack {
   void push(int n);
   int top();
   bool isEmpty();
-  std::string debug_string();
+  std::string debugString();
+};
+
+
+class minStack {
+
+ private:
+  stack m = stack();
+  stack s = stack();
+
+ public:
+  
+  minStack();
+  int pop();
+  void push(int n);
+  int top();
+  bool isEmpty();
+  std::string debugString();
+  int minVal();
+
 };
