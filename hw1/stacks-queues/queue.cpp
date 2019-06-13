@@ -51,3 +51,7 @@ int queue::dequeue(){
     return ret;
   }
 }
+
+std::string queue::debug_string(){
+  return s1.debug_string();
+}

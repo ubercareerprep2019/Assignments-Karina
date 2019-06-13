@@ -16,5 +16,5 @@ class stack {
   void push(int n);
   int top();
   bool isEmpty();
-  void debug_string();
+  std::string debug_string();
 };

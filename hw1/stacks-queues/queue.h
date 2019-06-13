@@ -13,4 +13,5 @@ class queue {
   queue();
   void enqueue(int num);
   int dequeue();
+  std::string debug_string();
 };

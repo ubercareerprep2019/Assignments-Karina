@@ -18,7 +18,7 @@ s.push(35);
 s.push(40);
 s.push(45);
 s.push(50);
-s.debug_string();
+ std::cout << s.debug_string() << std::endl;
 
 //at capacity
 s.push(55);

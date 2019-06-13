@@ -1,5 +1,7 @@
 #include <iostream>
 #include "stack.h"
+#include <exception>
+
 
 
 //index 0 stores the int while index 1 stores info about the next min
@@ -30,21 +32,18 @@ void stack::push(int n){
   }
 
   else {
-    std::cout << "at capacity" << std::endl;
+    std::cout << "at cap " << std::endl;
     return;
   }
-
 }
 
 int stack::top(){
-  
   return t;
   
 }
 
 
 int stack::pop(){
-  
   if (!isEmpty()){
     int ret = t;
       if (size == 1){
@@ -68,13 +67,14 @@ int stack::pop(){
 
 }
 
-void stack::debug_string(){
+std::string stack::debug_string(){
   std::cout << "size: " << size << std::endl;
-  std::string s = "[ ";
+  std::string s;
   for (int i=0; i < size; i++){
-    s += std::to_string(arr[i]) + ", ";
+    s = std::to_string(arr[i]) + "->" + s;
   }
 
-  std::cout << s.substr(0, s.length() -2) << " ]" << std::endl;
+  s = "TOP->" + s.substr(0, s.length()-2);
+  return s;
 }
 
