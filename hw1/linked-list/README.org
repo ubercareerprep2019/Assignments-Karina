@@ -15,6 +15,11 @@ make test
 ./test
 #+end_src
 
+To remove object and .exe files, use 
+#+begin_src bash
+make clean
+#+end_src
+
 * Instructions
 ** Implement a singly linked list class containing the following methods:
 - void pushBack(<T> data)
