@@ -1,4 +1,4 @@
-* Part 2: Arrays & Strings (1 hr)
+* Part 2: Arrays & Strings
 
 * Instructions
 ** Implement the functions:
