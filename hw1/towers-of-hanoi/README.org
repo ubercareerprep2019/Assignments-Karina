@@ -1,4 +1,4 @@
-* Part 4: Linked Lists
+* Part 5: Towers of Hanoi
 
 * Usage 
 
