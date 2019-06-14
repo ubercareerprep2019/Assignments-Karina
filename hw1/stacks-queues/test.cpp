@@ -23,7 +23,8 @@ TEST_CASE("push, pop, top"){
   s.push(55);
   //should do nothing:
   CHECK(s.debugString() == "TOP->50->45->40->35->30->25->20->15->10->5");
-  s.pop();
+  //checking pop return value
+  CHECK(s.pop() == 50);
   s.pop();
   s.pop();
   CHECK(s.debugString() == "TOP->35->30->25->20->15->10->5");
