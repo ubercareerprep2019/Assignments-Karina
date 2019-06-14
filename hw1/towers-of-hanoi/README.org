@@ -1,0 +1,21 @@
+* Part 4: Linked Lists
+
+* Usage 
+
+#+begin_src bash
+make main
+
+./main
+#+end_src
+
+* Instructions
+** Create a class to implement the Towers of Hanoi puzzle logic. You will need at least the
+following methods:
+- void moveDisk(uint startingRod, uint destinationRod)
+- void moveDisk(uint startingRod, uint destinationRod)
+- Array<Disk> disksAtRod(uint rodIndex)
+ 
+
+
+
+
