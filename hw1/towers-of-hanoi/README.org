@@ -9,8 +9,7 @@ make main
 #+end_src
 
 * Instructions
-** Create a class to implement the Towers of Hanoi puzzle logic. You will need at least the
-following methods:
+** Create a class to implement the Towers of Hanoi puzzle logic. You will need:
 - void moveDisk(uint startingRod, uint destinationRod)
 - void moveDisk(uint startingRod, uint destinationRod)
 - Array<Disk> disksAtRod(uint rodIndex)
