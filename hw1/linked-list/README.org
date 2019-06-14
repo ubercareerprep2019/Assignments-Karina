@@ -2,10 +2,10 @@
 
 * Usage 
 
-** Catch2 stands for C++ Automated Test Cases in a Header and is a multi-paradigm test framework for C++. which also supports Objective-C (and maybe C). It is primarily distributed as a single header file, although certain extensions may require additional headers.
-[link text itself]: https://github.com/catchorg/Catch2
+*** Catch2 stands for C++ Automated Test Cases in a Header and is a multi-paradigm test framework for C++. which also supports Objective-C (and maybe C).
+https://github.com/catchorg/Catch2
 
-The test target	    in this	folder uses catch to run queue and stack tests.
+The test target in this	folder uses catch to run queue and stack tests.
 
 #+begin_src bash
 make main
