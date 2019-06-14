@@ -53,7 +53,8 @@ int main()
   int d = 2;
 
   hanoi(numDisks, s, t, d);
-
+  std::cout << "\ndestination stack after hanoi(3, s, t, d) " << std::endl;
+  std::cout << "---------------------------\n" << std::endl;
   std::vector<int> dest;
   while (!(disksAtRod(d).isEmpty())){
       dest.push_back(disksAtRod(d).pop());
@@ -83,8 +84,8 @@ int main()
   while (!(disksAtRod(d).isEmpty())){
     dest.push_back(disksAtRod(d).pop());
   }
-
-  std::cout << "\n---------------------\n" << std::endl;
+  std::cout << "\ndestination stack after hanoi(5, s, t, d) " << std::endl;
+  std::cout << "---------------------------\n" << std::endl;
   for (int i = 0; i < numDisks; i++){
     std::cout << dest.at(i) << std::endl;
   }
