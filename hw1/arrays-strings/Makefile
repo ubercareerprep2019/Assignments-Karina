@@ -6,4 +6,5 @@ main: arrays-strings.o
 arrays-strings.o: arrays-strings.cpp 
 
 clean:
+	rm main
 	rm  arrays-strings.o 
