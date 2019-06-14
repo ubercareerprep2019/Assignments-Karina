@@ -1,27 +1,33 @@
 #include <iostream>
-#include <vector>
-
+#include <algorithm>    // std::sort
+#include <vector>  
 //takes two strings and returns true if one string is a permutation of the other, false otherwise
 
-//this method compares the sum of the ascii char summation of each string, which makes it a case-sensitive comparison? 
 
+//Orignially, I used two for-loops to find the sum of the ascii values of every character in each string and retrned sum1 == sum2. However, I then realized that this method doesn't work because the sums of different characters can yield the same sums (ie: 'a' + 'r', or 97 + 114 ==  100 + 111 or 'd' + 'o.)'
+
+//Instead I stored the ascii values in two vectors, sorted the vectors, and checked if they're the same. This is nlog(n)
 bool isStringPermutation(std::string s1, std::string s2){
   if (s1.length() != s2.length()){
     return false;
   }
+  
+  std::vector<int> v1 = std::vector<int>();
+  std::vector<int> v2 = std::vector<int>();
 
-  //sum of ASCII values of s1 chars:
-  int sum1 = 0;
   for (int i=0; i < s1.length(); i++){
-    sum1 += int(s1[i]);
+    v1.push_back(int(s1[i]));
+    v2.push_back(int(s2[i]));
   }
 
-  int sum2 = 0;
-  for (int i=0; i <s2.length(); i++){
-    sum2 += int(s2[i]);
-  }
+  std::sort(v1.begin(), v1.begin()+s1.length());
+  std::sort(v2.begin(), v2.begin()+s1.length());
 
-  return sum1 == sum2;
+  // Compare all the elements of two vectors
+  bool result = std::equal(v1.begin(), v1.end(), v2.begin());
+ 
+  return result;
+
 }
 
 //returns an array of all pairs of integers from the input array whose sum equals the target
@@ -52,6 +58,7 @@ int main(){
   //test cases fxn1
   std::cout << isStringPermutation("hello", "olehl") << std::endl; //true
   std::cout << isStringPermutation("hello", "world") << std::endl; //false
+
 
   //test cases fxn2
   std::vector<int> param1;
