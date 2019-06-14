@@ -9,8 +9,10 @@ The test target in this	folder uses catch to run queue and stack tests.
 
 #+begin_src bash
 make main
+make test
 
 ./main
+./test
 #+end_src
 
 * Instructions
