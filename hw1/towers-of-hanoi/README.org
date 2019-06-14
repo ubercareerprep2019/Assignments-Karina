@@ -8,6 +8,11 @@ make main
 ./main
 #+end_src
 
+To remove object and .exe files use
+#+begin_src bash
+make clean
+#+end_src
+
 * Instructions
 ** Create a class to implement the Towers of Hanoi puzzle logic. You will need:
 - void moveDisk(uint startingRod, uint destinationRod)
