@@ -1,6 +1,7 @@
 #include <iostream>
 #include <algorithm>    // std::sort
-#include <vector>  
+#include <vector>
+#include <unordered_set>   
 //takes two strings and returns true if one string is a permutation of the other, false otherwise
 
 
@@ -32,13 +33,14 @@ bool isStringPermutation(std::string s1, std::string s2){
 
 //returns an array of all pairs of integers from the input array whose sum equals the target
 
-//TO DO: Optomize to O(n) using a hashset?
+
 
 std::vector<std::pair<int, int> > pairsThatEqualSum(std::vector<int> inputArray,  int targetSum){
   
   //declaring vector to be returned
   std::vector<std::pair<int, int> > ret;
 
+  /*//TO DO: Optomize to O(n) using a hashset?
   //O(n^2):
   for (int i = 0; i < inputArray.size() - 1; i++){
     for (int j = i + 1; j < inputArray.size(); j++){
@@ -48,6 +50,24 @@ std::vector<std::pair<int, int> > pairsThatEqualSum(std::vector<int> inputArray,
 	p.second = inputArray[j];
 	ret.push_back(p);
       }
+    }
+    }*/
+
+  
+  //optimizing from o(n^2) to o(n)
+  std::unordered_set<int> vals = std::unordered_set<int>();
+  for (int i=0; i<inputArray.size(); i++){
+    vals.insert(inputArray.at(i));
+  }
+
+  for (int i=0; i<inputArray.size(); i++){
+    if (vals.find(abs(targetSum - inputArray.at(i))) != vals.end()){
+      std::pair<int, int> p;                                                            
+      p.first = inputArray.at(i); 
+      p.second = targetSum - inputArray.at(i);
+      ret.push_back(p);  
+      vals.erase(targetSum - inputArray.at(i)); //accounting for duplicates
+      vals.erase(inputArray.at(i)); //accounting for duplicates
     }
   }
   return ret;
