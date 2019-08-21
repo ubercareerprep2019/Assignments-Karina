@@ -112,6 +112,21 @@ void GraphWithAdjacencyList::removeEdge(int node1, int node2){
 
 }
 
+
+std::vector<GraphNode> GraphWithAdjacencyList::getAdjNodes(int key){
+  GraphNode node = GraphNode(key);
+  std::vector<GraphNode> ret;
+  if (adjNodes.find(node) == adjNodes.end()) {
+    std::cout << key << " doesn't exist" << std::endl;
+    return ret;
+  }
+  ret = adjNodes[node];
+  return ret;
+}
+
+
+
+//[Graphs - Ex2]
 void GraphWithAdjacencyList::DFS(int key){
   
   if (adjNodes.empty()){
@@ -127,7 +142,7 @@ void GraphWithAdjacencyList::DFS(int key){
   while(!s.empty()){
     GraphNode curr = s.top();
     s.pop();
-    //std::cout << "not visited yet: " << (visited.find(curr) == visited.end()) << std::endl;
+
     //if we haven't visited it yet
     if (visited.find(curr) == visited.end()){
       std::cout << curr.data << " ";
@@ -138,14 +153,13 @@ void GraphWithAdjacencyList::DFS(int key){
     for (int i=0; i < currVecList.size(); ++i){
       if(visited.find(currVecList.at(i)) == visited.end()){
 	    s.push(currVecList.at(i));
-	    //std::cout << "just pushed " << currVecList.at(i).data << std::endl;
       }
     }
   }
   std::cout << std::endl;
 }
 
-
+//[Graphs - Ex3]
 void GraphWithAdjacencyList::BFS(int key){
 
   if (adjNodes.empty()){
@@ -156,7 +170,7 @@ void GraphWithAdjacencyList::BFS(int key){
   std::queue<GraphNode> q;
   GraphNode first = GraphNode(key);
   q.push(first);
-  //tracking nodes we've already visited:                                                 
+  //tracking nodes we've already visited:                                               
   std::set<GraphNode> visited;
 
   while(!q.empty()){
@@ -172,13 +186,13 @@ void GraphWithAdjacencyList::BFS(int key){
     for (int i=0; i < currVecList.size(); ++i){
       if(visited.find(currVecList.at(i)) == visited.end()){
 	q.push(currVecList.at(i));
-	//std::cout << "just pushed " << currVecList.at(i).data << " ";         
       }
     }
   }
   std::cout << std::endl;
 }
 
+//[Graphs - Ex4]
 int GraphWithAdjacencyList::minNumberOfEdges(int node1, int node2){
 
   if (adjNodes.empty()){
@@ -190,8 +204,9 @@ int GraphWithAdjacencyList::minNumberOfEdges(int node1, int node2){
   GraphNode first = GraphNode(node1);
   q.push(first);
 
-  //tracking nodes we've already visited:                                                 
+  //tracking nodes we've already visited:                                        
   std::set<GraphNode> visited;
+
   std::map<GraphNode, int> numEdges;
   numEdges[first] = 0; 
   while(!q.empty()){
@@ -200,7 +215,6 @@ int GraphWithAdjacencyList::minNumberOfEdges(int node1, int node2){
     
 
   if (visited.find(curr) == visited.end()){
-    // std::cout << curr.data << " ";
     visited.insert(curr);
   }
 
@@ -212,26 +226,10 @@ int GraphWithAdjacencyList::minNumberOfEdges(int node1, int node2){
 	  return numEdges[curr] + 1;
 	}
 	numEdges[currVecList.at(i)] = numEdges[curr] + 1;
-	//std::cout << "just pushed " << currVecList.at(i).data << " ";         
       }
     }
   }
   return numEdges[node2];
-}
-
-
-
-
-
-std::vector<GraphNode> GraphWithAdjacencyList::getAdjNodes(int key){
-  GraphNode node = GraphNode(key);
-  std::vector<GraphNode> ret;
-  if (adjNodes.find(node) == adjNodes.end()) {
-    std::cout << key << " doesn't exist" << std::endl;
-    return ret;
-  }
-  ret = adjNodes[node];
-  return ret;
 }
 
 int main(){

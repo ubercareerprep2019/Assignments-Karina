@@ -1,7 +1,7 @@
 #pragma once
 #include "TreeNode.h"
 
-class PBST {
+class PhonebookBST {
  private:
   TreeNode<std::pair<std::string, long> >* root = new TreeNode<std::pair<std::string, long> >();
   void insertNode(TreeNode<std::pair<std::string, long> >*& r, std::pair<std::string, long> p);
@@ -9,10 +9,10 @@ class PBST {
 
  public:
   //constructors
-  PBST ();
+  PhonebookBST ();
 
   //destructor
-  ~PBST();
+  ~PhonebookBST();
 
   void insert(std::pair<std::string, long> p);
   long find(std::string name);

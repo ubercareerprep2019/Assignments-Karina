@@ -1,18 +1,18 @@
 #pragma once
-#include "PBST.cpp"
+#include "PhonebookBST.cpp"
 #include <string>
 
-class BinarySearchTreePhoneBook{
+class BSTPhoneBook{
 
  private:
 
   //tree has names
-  PBST *book = new PBST();
+  PhonebookBST *book = new PhonebookBST();
   int s;
 
  public:
   
-  BinarySearchTreePhoneBook();
+  BSTPhoneBook();
   int size();
   void insert(std::string name, long phoneNumber);
   long find(std::string name);

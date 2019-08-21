@@ -12,9 +12,10 @@ Tree<T>::Tree(TreeNode<T>* root){
   this->root = root;
 }
 
+//[Trees - Ex1]
+//prints the values of the data in all the TreeNodes 
 template <typename T>
 void Tree<T>::print(TreeNode<T>* root){
-  //std::cout <<"ROOT: " << root->getData() << std::endl;
   if (root == nullptr) {
     return;
   }
@@ -28,7 +29,7 @@ void Tree<T>::print(TreeNode<T>* root){
     
 }
 
-//using one queue to get one line traversal
+//Prints tree level by level on one line
 template <typename T>
 void Tree<T>::printOneLineLevelByLevel(TreeNode<T>* root){
   if (root == nullptr){
@@ -55,7 +56,9 @@ void Tree<T>::printOneLineLevelByLevel(TreeNode<T>* root){
 
 }
 
-//using two queues to account for the new line
+//[Trees - Ex2]
+//Prints Tree level by level on separate lines
+//Unlike printOneLineLevelByLevel, this uses two queues
 template <typename T>
 void Tree<T>::printLevelByLevel(TreeNode<T>* root){
   if (root==nullptr){
@@ -100,6 +103,8 @@ void Tree<T>::printLevelByLevel(TreeNode<T>* root){
 }
 
 
+//[Trees - Ex3]
+//Uses similar logic to printLevelByLevel for counting levels
 template <typename T>
 void Tree<T>::printNumLevels(TreeNode<T>* root){
   std::queue<TreeNode<T>*> q1; 

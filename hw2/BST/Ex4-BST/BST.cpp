@@ -3,35 +3,33 @@
 
 template <typename T>
 BST<T>::BST(){
-  
   this->root = nullptr;
-  std::cout << "Leaving constructor..." << std::endl;
 }
 
 
 template <typename T>
 BST<T>::BST(TreeNode<T>* root){
   this->root = root;
-  std::cout << "Leaving constructor..." << std::endl;
 }
 
+//[Trees - Ex4]
+//public insert method
 template <typename T>
 void BST<T>::insert(T data){
-  std::cout << "TYPE IS: " << typeid(data) << std::endl;
   if (this->root == nullptr){
     TreeNode<T> *root = new TreeNode<T>(data);
     this-> root = root;
     return;
   }
-  std::cout << "Running insertNode(root, data)" << std::endl;
   return insertNode(root, data);
 }
 
+//private insert helper method 
 template <typename T>
 void BST<T>::insertNode(TreeNode<T> *root, T data){
   std::cout << "root is: " << root->getData() << std::endl;
   std::cout << "data: " << data << std::endl;
-  //vall is greater or equal to root, belongs on the right
+  //data is greater or equal to root, belongs on the right
   if (data >= root->getData()){
     //reached a leaf, setting to the right of the leaf
     if (root->getRight() == nullptr){
@@ -53,6 +51,7 @@ void BST<T>::insertNode(TreeNode<T> *root, T data){
   }
 }
 
+//[Trees - Ex4]
 template <typename T>
 bool BST<T>::find(T data){
   if (root == nullptr){
@@ -63,9 +62,9 @@ bool BST<T>::find(T data){
   }
 }
 
+//private find helper method
 template <typename T>
 bool BST<T>::findNode(TreeNode<T> *root, T data){
-  //we've passed a leaf
   if (root == nullptr){
     return false;
   }

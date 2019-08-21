@@ -1,19 +1,19 @@
 #include <iostream>
-#include "PBST.h"
+#include "PhonebookBST.h"
 #include "TreeNode.cpp"
 
 
-PBST::PBST(){
+PhonebookBST::PhonebookBST(){
   this->root = nullptr;
   //std::cout << "Leaving constructor..." << std::endl;
 }
 
-void PBST::insert(std::pair<std::string, long> p){
+void PhonebookBST::insert(std::pair<std::string, long> p){
   this->insertNode(this->root, p);
 }
 
 
-void PBST::insertNode(TreeNode<std::pair<std::string, long> >*& r, std::pair<std::string, long> p){
+void PhonebookBST::insertNode(TreeNode<std::pair<std::string, long> >*& r, std::pair<std::string, long> p){
   if (r == nullptr){
     r = new TreeNode<std::pair<std::string, long> >(p);
   }
@@ -29,7 +29,7 @@ void PBST::insertNode(TreeNode<std::pair<std::string, long> >*& r, std::pair<std
 
 
 
-long PBST::find(std::string name){
+long PhonebookBST::find(std::string name){
   if (root == nullptr){
     std::cout << "here" << std::endl;
     return -1;
@@ -39,7 +39,7 @@ long PBST::find(std::string name){
   }
 }
 
-long PBST::findNode(TreeNode<std::pair<std::string, long> >*& root, std::string name){
+long PhonebookBST::findNode(TreeNode<std::pair<std::string, long> >*& root, std::string name){
   //we've passed a leaf
   if (root == nullptr){
     return -1;
@@ -59,33 +59,9 @@ long PBST::findNode(TreeNode<std::pair<std::string, long> >*& root, std::string 
 }
 
 
-PBST::~PBST(){
+PhonebookBST::~PhonebookBST(){
   std::cout << "In the destructor: " << std::endl;
 }
 
-/*
-int main(){
 
-  PBST *bookTree = new PBST();
-  
-  person bob;
-  bob.name="Bob";
-  bob.number=12345;
 
-  person steve;
-  steve.name="Steve Jobs";
-  steve.number = 156435;
-
-  person ana;
-  ana.name= "Anabeth Brown";
-  ana.number=347656789;
-
-  bookTree->insert(bob);
-  bookTree->insert(steve);
-  bookTree->insert(ana);
-  std::cout << bookTree->find("Bob") <<std::endl; //12345
-  std::cout << bookTree->find("Steve Jobs") <<std::endl; //156435
-  std::cout << bookTree->find("Larry David") <<std::endl; //-1
-
-}
-*/
