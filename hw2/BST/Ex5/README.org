@@ -1,0 +1,15 @@
+* Usage 
+
+#+begin_src bash
+make ListPhoneBook
+make BSTPhoneBook
+
+./ListPhoneBook
+./BSTPhoneBook
+#+end_src
+
+To remove object and .exe files use
+#+begin_src bash
+make clean
+#+end_src
+
