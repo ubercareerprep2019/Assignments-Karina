@@ -12,6 +12,7 @@ template <typename T> class Tree{
   void print(TreeNode<T>* root);
   void printOneLineLevelByLevel(TreeNode<T>* root);
   void printLevelByLevel(TreeNode<T>* root);
+  void printNumLevels(TreeNode<T>* root);
 };
 
 

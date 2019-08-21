@@ -23,7 +23,7 @@ int main() {
   std::cout << "\n\n";
 
   TreeNode<std::string> *p1 = new TreeNode<std::string>("A");
-  TreeNode<std::string> *p2 = new TreeNode<std::string>("B");
+   TreeNode<std::string> *p2 = new TreeNode<std::string>("B");
   TreeNode<std::string> *p3 = new TreeNode<std::string>("C");
   TreeNode<std::string> *p4 = new TreeNode<std::string>("I");
   TreeNode<std::string> *p5 = new TreeNode<std::string>("D");
@@ -48,6 +48,9 @@ int main() {
 
   Tree<std::string> *tree2 = new Tree<std::string> (p1);
   tree2->printLevelByLevel(p1);
+  std::cout << std::endl;
+
+  tree2->printNumLevels(p1);
 
   return 0;
 }
