@@ -1,0 +1,15 @@
+* Part 2: Arrays & Strings
+
+* Usage 
+
+#+begin_src bash
+make main
+
+./main
+#+end_src
+
+To remove object and .exe files use
+#+begin_src bash
+make clean
+#+end_src
+

@@ -1,0 +1,16 @@
+* Part 2: Arrays & Strings
+
+* Usage 
+
+#+begin_src bash
+make List
+make BST
+
+./List
+./BST
+#+end_src
+
+To remove object and .exe files use
+#+begin_src bash
+make clean
+#+end_src
