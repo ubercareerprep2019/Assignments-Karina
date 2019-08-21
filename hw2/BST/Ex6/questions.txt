@@ -1,0 +1,29 @@
+ListPhoneBook output:
+
+Insert took  2671 milliseconds.
+The size of the PhoneBook is 1000000.
+find() was called 1000 times.
+Search took 23626 milliseconds.
+
+BinarySearchTreePhoneBook output:
+
+Insert took  6594 milliseconds.
+The size of the PhoneBook is 25000.
+find() was called 1000 times.
+Search took 787 milliseconds.
+
+
+Here, it takes the BinarySearchTreePhoneBook 
+three times longer to insert 25,000 entries than it takes
+ListPhoneBook to insert 1000000.
+
+On the other hand, it takes BinarySearchTreePhoneBook
+787 milliseconds to perform 1000 searches while it takes 
+BinarySearchTreePhoneBook 23626 milliseconds to do the same thing.
+
+Insertion was quicker using the ListPhoneBook because it has an
+O(1) amortized time complexity. Insertion using a binary tree, however,
+has an O(n) worst case time complexity. 
+
+Search using the List has an O(n) time complexity, while searching with the 
+binary search tree has a time complexity of O(logn).
